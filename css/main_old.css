@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed|Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed|Barlow+Semi+Condensed|Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed|Barlow+Semi+Condensed|Dosis|Open+Sans+Condensed:300');
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid yellowgreen;
+    height: 100px;
+}
+.header_nav{
+    display: flex;
+    flex-direction: column;
+}
+.social-f {
+    display: inline-flex;
+    width: 140px;
+    justify-content: space-between;
+    align-items: center; 
+}
+.social-f svg {
+      height: 30px;
+      width: 30px;
+      fill: #fff; 
+    }
+.social-f svg:hover {
+        opacity: 1;
+        fill: rgb(45, 45, 235);; 
+    }
+.header_weather_location {
+    background-color: #3c8ed2;
+    display: flex;
+    justify-content: space-around;
+
+}
+.current_loc{
+    text-decoration: none;
+    display: flex;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.location_text{
+    line-height: 50px;
+    font-size: 14px;
+    
+}
+.header_weather_period{
+    width: 100%;
+    background-color: #050000;
+}
+.header_weather_period ul.period_list{
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+    margin: 14px 0;
+    padding: 0;
+    transition: all 350ms;
+    position: relative;
+}
+.header_weather_period ul.period_list .period_item a{
+    text-decoration: none;
+    color: #fff;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 20px;
+    opacity: 1;
+}
+.header_weather_period ul.period_list .period_item{
+    position: relative;
+}
+.header_weather_period ul.period_list .period_item::after{
+    position: absolute;
+    bottom: -8.5px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    content: '';
+    transition: all .35s;
+    background-color: #fff;
+    transform: scaleX(0);
+}
+.header_weather_period ul.period_list .period_item:hover::after{
+    transform: scaleX(1);
+}
+
+.wether_penal_wrap{
+    position: relative;
+    display: flex;
+    width: 50%;
+    height: 335px;
+    z-index: 4000;
+}
+
+.wether_penal{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+    background-color: rgba(88, 88, 241, 0.8);
+    position: relative;
+    background-image: url('../img/bg/night-clear.jpg');
+    padding: 0 20px;
+    
+}
+.wether_penal_title{
+    text-align: center;
+    text-transform: uppercase;
+}
+.wether_penal_subtitle{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+.wether_penal_temp {
+    padding: 0;
+    margin: 0;
+    font-size: 45px;
+}
+.wether_penal p{
+    display: inline-block;
+}
+
+.wether_penal_icon img{
+    position: absolute;
+    right: 20px;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-color: rgba(37, 37, 112, 0.8);
+}
+.wather_list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 13px;
+    list-style: none;
+    margin: 0;
+    background-color: #ffffff;
+    width: 25%;
+    margin-left: 10px;
+}
+.wather_list .wather_item {
+    border-bottom: 1px solid #474747;
+    padding: 5px 0 0 7px;
+    font-size: 14px;
+    color: rgb(57, 57, 57);
+    height: 100%;
+}
+.wather_list .wather_item .wather_item_title{
+    padding-bottom: 5px;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.wather_list .wather_item .wather_item_subtile{
+    margin: 0;
+    padding-bottom: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    font-weight: 600;
+    
+}
+.wather_list .wather_item > span {
+
+}
+
+.wather_list .wather_item:last-child{
+    border-bottom: none;
+}

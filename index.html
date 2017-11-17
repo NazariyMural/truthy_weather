@@ -104,13 +104,13 @@
             </div>
             <div class="header_weather_period">
                 <ul class="period_list">
-                    <li class="period_item"><a href="http://">Сьогодні</a></li>
-                    <li class="period_item"><a href="http://">Погодинно</a></li>
-                    <li class="period_item"><a href="http://">5 днів</a></li>
-                    <li class="period_item"><a href="http://">10 днів</a></li>
-                    <li class="period_item"><a href="http://">Вихідні</a></li>
-                    <li class="period_item"><a href="http://">Щомісяця</a></li>
-                    <li class="period_item"><a href="http://">Карти</a></li>
+                    <li class="period_item"><a href="#forcast">Сьогодні</a></li>
+                    <li class="period_item"><a href="#forcast">Погодинно</a></li>
+                    <li class="period_item"><a href="#forcast">5 днів</a></li>
+                    <li class="period_item"><a href="#">10 днів</a></li>
+                    <li class="period_item"><a href="#">Вихідні</a></li>
+                    <li class="period_item"><a href="#">Щомісяця</a></li>
+                    <li class="period_item"><a href="#">Карти</a></li>
                 </ul>
             </div>
         </nav>
@@ -118,15 +118,13 @@
   <div class="bg">
       <div id="Clouds">
       <div class="Cloud Foreground"></div>
-      <div class="Cloud Background moon-cloud-black"></div>
+      <div class="Cloud Background" id="moon-cloud-black"></div>
       <div class="Cloud Foreground moon"></div>
       <div class="Cloud Background"></div>
       <div class="Cloud Foreground"></div>
+      <div class="Cloud Background" id="moon-cloud-black"></div>
       <div class="Cloud Foreground"></div>
-      <div class="Cloud Background"></div>
-      <div class="Cloud Background"></div>
-      <div class="Cloud Background moon-cloud-black"></div>
-      <div class="Cloud Foreground"></div>
+      <div class="Cloud Background" id="moon-cloud-black"></div>
       <div class="Cloud Background"></div>
       
       <div class="Cloud Background"></div>
@@ -193,10 +191,51 @@
     </div>
     <section class="forcast">
         <nav class="forcast_header">
-            <h2 class="forcast_header_title"></h2>
-            <a href="http://" class="forcast_header_hours">Погодинно</a>
-            <a href="http://" class="forcast_header_hours">10 Днів</a>
+            <h2 class="forcast_header_title">Наступні 36 годин</h2>
+            <div class="forcast_header_link">
+                <a href="#" class="forcast_header_hours">Погодинно</a>
+                <a href="#" class="forcast_header_hours">10 Днів</a>
+            </div>
         </nav>
+        <div class="forcast_content">
+            <div class="forcast_current flex_col">
+                <h2 class="period_of_forcast in_3_h"></h2>
+                <p class="wether_forcast_desc in_3_h"></p>
+                <div class="forcast_icon in_3_h"></div>
+                <span class="forcast_temp in_3_h"></span>
+                <span class="forcast_humidity in_3_h"></span>
+            </div>
+            
+            <div class="forcast_tomorrow_day flex_col">
+                <h2 class="period_of_forcast tomorrow_day"></h2>
+                <p class="wether_forcast_desc tomorrow_day"></p>
+                <div class="forcast_icon tomorrow_day"></div>
+                <span class="forcast_temp tomorrow_day"></span>
+                <span class="forcast_humidity tomorrow_day"></span>
+            </div>
+            <div class="forcast_tomorrow_evening flex_col">
+                <h2 class="period_of_forcast tomorrow_evening"></h2>
+                <p class="wether_forcast_desc tomorrow_evening"></p>
+                <div class="forcast_icon tomorrow_evening"></div>
+                <span class="forcast_temp tomorrow_evening"></span>
+                <span class="forcast_humidity tomorrow_evening"></span>
+            </div>
+            <div class="forcast_day_after_tomorrow_day flex_col">
+                <h2 class="period_of_forcast day_after_tomorrow_day"></h2>
+                <p class="wether_forcast_desc day_after_tomorrow_day"></p>
+                <div class="forcast_icon day_after_tomorrow_day"></div>
+                <span class="forcast_temp day_after_tomorrow_day"></span>
+                <span class="forcast_humidity day_after_tomorrow_day"></span>
+            </div>
+            <div class="forcast_in_five_day flex_col">
+                <h2 class="period_of_forcast in_five"></h2>
+                <p class="wether_forcast_desc in_five"></p>
+                <div class="forcast_icon in_five"></div>
+                <span class="forcast_temp in_five"></span>
+                <span class="forcast_humidity in_five"></span>
+            </div>
+        </div>
+        <div id="forcast"></div>
     </section>
 </div>
 </body>

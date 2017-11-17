@@ -54,13 +54,28 @@
   z-index: 3;
   position: absolute;
   top: 40%;
+  transition: all .3s ease-in;
 }
 .Cloud.Foreground.moon {
   height: 50%;
   min-height: 70px;
   z-index: 3;
+  display: none;
+}
+.Cloud {
+  background-image: url('../img/big_cloud.svg');
+  transition: all .3s ease-in;
+}
+
+.Cloud.Background.moon-cloud-black {
+  background-image: url('../img/moon-cloud-black.svg');
+}
+
+.Cloud.Foreground.moon{
+  background-image: url('../img/moon.svg');
 }
 .Cloud.Background {
+  background-image: url('../img/if_moon_half.svg');
   height: 20%;
   min-height: 30px;
   -webkit-animation-duration: 210s;
@@ -270,19 +285,7 @@
           animation-duration: 146s;
   height: 7.84090909%;
 }
-.Cloud {
-  background-image: url('../img/big_cloud.svg');
-}
-.Cloud.Background {
-  background-image: url('../img/if_moon_half.svg');
-}
-.Cloud.Background.moon-cloud-black {
-  background-image: url('../img/moon-cloud-black.svg');
-}
 
-.Cloud.Foreground.moon{
-  background-image: url('../img/moon.svg');
-}
 html,
 body {
   margin: 0;
