@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Floating Cloud Background</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/bg.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="libs/jquery-3.2.1.min.js"></script>
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+  <header>
+    
+  </header>
+  <div class="bg">
+      <div id="Clouds">
+      <div class="Cloud Foreground"></div>
+      <div class="Cloud Background moon-cloud-black"></div>
+      <div class="Cloud Foreground moon"></div>
+      <div class="Cloud Background"></div>
+      <div class="Cloud Foreground"></div>
+      <div class="Cloud Foreground"></div>
+      <div class="Cloud Background"></div>
+      <div class="Cloud Background"></div>
+      <div class="Cloud Background moon-cloud-black"></div>
+      <div class="Cloud Foreground"></div>
+      <div class="Cloud Background"></div>
+      
+      <div class="Cloud Background"></div>
+    <svg viewBox="0 0 40 24" class="Cloud"><use xlink:href="#Cloud"></use></svg>
+    </div>
+
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      width="40px" height="24px" viewBox="0 0 40 24" enable- xml:space="preserve">
+      <defs>
+        <path id="Cloud" d="M33.85,14.388c-0.176,0-0.343,0.034-0.513,0.054c0.184-0.587,0.279-1.208,0.279-1.853c0-3.463-2.809-6.271-6.272-6.271
+      c-0.38,0-0.752,0.039-1.113,0.104C24.874,2.677,21.293,0,17.083,0c-5.379,0-9.739,4.361-9.739,9.738
+      c0,0.418,0.035,0.826,0.084,1.229c-0.375-0.069-0.761-0.11-1.155-0.11C2.811,10.856,0,13.665,0,17.126
+      c0,3.467,2.811,6.275,6.272,6.275c0.214,0,27.156,0.109,27.577,0.109c2.519,0,4.56-2.043,4.56-4.562
+      C38.409,16.43,36.368,14.388,33.85,14.388z"/>
+      </defs>
+    </svg>
+  </div>
+
+<div class=""container>
+    <label for="">
+        <select name="" id="">
+            <option disabled>Виберіть місто</option>
+            <option selected data-city="703448">Київ</option>
+            <option data-city="706483">Харків</option>
+            <option data-city="709930">Дніпро</option>
+            <option data-city="702550">Львів</option>
+            <option data-city="698740">Одеса</option>
+            <option data-city="690548">Ужгород</option>
+            <option data-city="707471">Івано-Франківськ</option>
+            <option data-city="709717">Донецьк</option>
+            <option data-city="702569">Луцьк</option>
+            <option data-city="689558">Вінниця</option>
+        </select>
+    </label>
+    <div class="wether_penal_wrap">
+      <div class="wether_penal">
+          <p class="wether_penal_title"></p>
+          <span class="wether_penal_subtitle"></span>
+          <div class="wether_penal_icon">
+            <!-- <img src="img/if_moon_half.svg" alt="moon"> -->
+          </div>
+          <span class="wether_penal_temp"></span>
+          <p class="wether_penal_desc"></p>
+          <p class="wether_penal_fell"></p>
+          <p class="wether_penal_min"></p>
+          
+      </div>
+      <ul class="wather_list">
+        <li class="wather_item">
+          <h3 class="wather_item_title">Наразі</h3>
+          <p class="wather_item_subtile">Вітер</p>
+          <span class="wather_item_wind"></span>
+        </li>
+        <li class="wather_item">
+            <p class="wather_item_subtile">Вологість</p>
+            <span class="wather_item_humidity"></span>
+        </li>
+        
+        <li class="wather_item">
+            <p class="wather_item_subtile">Видимість</p>
+            <span class="wather_item_visibility"></span>
+        </li>
+        <li class="wather_item">
+            <p class="wather_item_subtile">Тиск</p>
+            <span class="wather_item_pressure"></span>
+        </li>
+        <li class="wather_item">
+            <p class="wather_item_subtile">Схід сонця</p>
+            <span class="wather_item_sunrice">07:39</span>
+        </li>
+        <li class="wather_item">
+            <p class="wather_item_subtile">Захід сонця</p>
+            <span class="wather_item_sunset">16:38</span>
+        </li>
+      </ul>
+    </div>
+    <div id="root">
+
+    </div>
+</div>
+</body>
+</html>
