@@ -2,19 +2,119 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Floating Cloud Background</title>
+  <title>Coll weather</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="css/bg.css">
+  <!-- <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700'> -->
+  <!-- <link rel='stylesheet prefetch' href='https://raubarrera.neocities.org/cdpn/style.css'> -->
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/bg.css">
+  <link rel="stylesheet" href="css/custom_select.css">
+
   <script src="libs/jquery-3.2.1.min.js"></script>
   <script src="js/main.js"></script>
 </head>
 
 <body>
-  <header>
-    
-  </header>
+    <header>
+            
+        <nav class="header_nav">
+            <div class="header_weather_location">
+                <a href="" class="current_loc">
+                    <img alt="icon-weather" class="nav_icon_weather">
+                    <span class="location_text"></span>
+                </a>
+                <div class="select">
+                    <select name="slct" id="slct">
+                        <option disabled>Виберіть поточне розташування</option>
+                        <option selected data-city="703448">Київ</option>
+                        <option data-city="706483">Харків</option>
+                        <option data-city="709930">Дніпро</option>
+                        <option data-city="702550">Львів</option>
+                        <option data-city="698740">Одеса</option>
+                        <option data-city="690548">Ужгород</option>
+                        <option data-city="707471">Івано-Франківськ</option>
+                        <option data-city="709717">Донецьк</option>
+                        <option data-city="702569">Луцьк</option>
+                        <option data-city="689558">Вінниця</option>
+                    </select>
+                </div>
+                <div class="social-f">
+                        <a href="https://www.facebook.com">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="90px" height="90px" viewBox="0 0 90 90" style="enable-background:new 0 0 90 90;" xml:space="preserve">
+                                <g>
+                                    <path id="Facebook__x28_alt_x29_" d="M90,15.001C90,7.119,82.884,0,75,0H15C7.116,0,0,7.119,0,15.001v59.998
+                               C0,82.881,7.116,90,15.001,90H45V56H34V41h11v-5.844C45,25.077,52.568,16,61.875,16H74v15H61.875C60.548,31,59,32.611,59,35.024V41
+                               h15v15H59v34h16c7.884,0,15-7.119,15-15.001V15.001z" />
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/NazariyMural">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="475.084px" height="475.084px" viewBox="0 0 475.084 475.084" style="enable-background:new 0 0 475.084 475.084;"
+                                xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path d="M436.244,146.752c5.14-15.422,7.713-31.409,7.713-47.967c0-22.08-4.859-42.828-14.564-62.242
+                                   c-20.362,0-38.349,3.715-53.961,11.136c-15.604,7.423-33.4,18.938-53.379,34.545c-25.122-6.09-51.777-9.135-79.941-9.135
+                                   c-30.837,0-60.245,3.333-88.223,9.994c-20.364-15.99-38.351-27.74-53.959-35.26c-15.608-7.52-33.689-11.279-54.247-11.279
+                                   c-9.707,19.414-14.56,40.163-14.56,62.242c0,16.751,2.568,32.93,7.708,48.535C12.942,177.587,0,215.272,0,260.383
+                                   c0,39.595,5.898,71.092,17.701,94.507c6.283,12.367,14.465,23.312,24.554,32.832c10.085,9.514,21.601,17.228,34.545,23.13
+                                   c12.946,5.896,25.981,10.801,39.116,14.699c13.134,3.9,27.646,6.758,43.54,8.559c15.893,1.816,29.93,3.004,42.111,3.579
+                                   c12.181,0.564,25.693,0.853,40.544,0.853c17.508,0,33.396-0.432,47.678-1.283c14.277-0.855,30.594-2.953,48.964-6.276
+                                   c18.367-3.333,34.547-7.857,48.54-13.565c13.99-5.708,27.412-13.895,40.259-24.551c12.847-10.663,22.884-23.318,30.121-37.976
+                                   c11.604-23.603,17.412-55.107,17.412-94.507C475.078,215.082,462.135,177.206,436.244,146.752z M401.995,354.455
+                                   c-6.092,12.471-13.802,22.265-23.127,29.41c-9.329,7.139-20.938,12.847-34.831,17.135c-13.9,4.281-27.217,7.087-39.971,8.415
+                                   c-12.758,1.334-26.933,1.998-42.545,1.998h-47.966c-15.607,0-29.79-0.664-42.541-1.998c-12.752-1.328-26.075-4.134-39.971-8.415
+                                   c-13.891-4.288-25.5-9.996-34.829-17.135c-9.329-7.146-17.037-16.939-23.128-29.41c-6.09-12.471-9.136-27.076-9.136-43.824
+                                   c0-22.847,6.567-42.264,19.702-58.245c13.134-15.99,30.929-23.982,53.387-23.982c8.188,0,26.746,1.997,55.677,5.995
+                                   c13.513,2.093,28.456,3.14,44.823,3.14c16.372,0,31.313-1.044,44.824-3.14c29.317-3.999,47.869-5.995,55.678-5.995
+                                   c22.457,0,40.252,7.996,53.386,23.982c13.135,15.988,19.698,35.398,19.698,58.245
+                                   C411.125,327.382,408.079,341.995,401.995,354.455z" />
+                                        <path d="M166.875,265.52c-5.806-6.475-12.703-9.712-20.699-9.712c-7.998,0-14.896,3.241-20.701,9.712
+                                   c-5.802,6.468-9.897,13.703-12.275,21.689c-2.383,8.002-3.571,15.804-3.571,23.422c0,7.61,1.191,15.413,3.571,23.414
+                                   c2.375,7.991,6.468,15.222,12.275,21.689c5.808,6.475,12.703,9.713,20.701,9.713c7.996,0,14.896-3.244,20.699-9.713
+                                   c5.804-6.468,9.897-13.698,12.275-21.689c2.38-8.001,3.571-15.804,3.571-23.414c0-7.611-1.188-15.42-3.571-23.422
+                                   C176.771,279.226,172.682,271.994,166.875,265.52z" />
+                                        <path d="M349.601,265.52c-5.804-6.475-12.703-9.712-20.697-9.712c-7.991,0-14.894,3.241-20.701,9.712
+                                   c-5.804,6.468-9.896,13.703-12.271,21.689c-2.385,8.002-3.576,15.804-3.576,23.422c0,7.61,1.191,15.413,3.576,23.414
+                                   c2.375,7.991,6.468,15.222,12.271,21.689c5.808,6.475,12.71,9.713,20.701,9.713c7.994,0,14.894-3.244,20.697-9.713
+                                   c5.801-6.468,9.896-13.698,12.278-21.689c2.379-8.001,3.569-15.804,3.569-23.414c0-7.611-1.19-15.42-3.569-23.422
+                                   C359.498,279.226,355.402,271.994,349.601,265.52z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nazariy-mural-976369109/">
+                            <svg class="svg-linkedIn" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                x="0px" y="0px" viewBox="0 0 478.165 478.165" style="enable-background:new 0 0 478.165 478.165;" xml:space="preserve">
+                                <g>
+                                    <path id="LinkedIn__x28_alt_x29__3_" d="M442.78,0H35.424C15.859,0,0,15.401,0,34.288v409.688
+                                               c0,18.828,15.859,34.189,35.424,34.189h407.337c19.585,0,35.404-15.361,35.404-34.189V34.288C478.165,15.401,462.345,0,442.78,0z
+                                                M145.003,400.244H72.781V184.412h72.223V400.244z M108.842,154.965h-0.478c-24.247,0-39.927-16.696-39.927-37.337
+                                               c0-21.219,16.158-37.337,40.863-37.337c24.725,0,39.927,16.118,40.385,37.337C149.705,138.269,134.045,154.965,108.842,154.965z
+                                                M405.384,400.244h-72.083V284.807c0-29.009-10.599-48.952-36.739-48.952c-20.063,0-31.798,13.428-36.958,26.458
+                                               c-1.893,4.423-2.391,10.898-2.391,17.393v120.537H184.95c0,0,0.916-195.629,0-215.832h72.263v30.603
+                                               c9.484-14.684,26.658-35.703,65.01-35.703c47.577,0,83.161,30.862,83.161,97.167V400.244z M256.774,215.712
+                                               c0.06-0.219,0.159-0.438,0.418-0.677v0.677H256.774L256.774,215.712z" />
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+            </div>
+            <div class="header_weather_period">
+                <ul class="period_list">
+                    <li class="period_item"><a href="http://">Сьогодні</a></li>
+                    <li class="period_item"><a href="http://">Погодинно</a></li>
+                    <li class="period_item"><a href="http://">5 днів</a></li>
+                    <li class="period_item"><a href="http://">10 днів</a></li>
+                    <li class="period_item"><a href="http://">Вихідні</a></li>
+                    <li class="period_item"><a href="http://">Щомісяця</a></li>
+                    <li class="period_item"><a href="http://">Карти</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
   <div class="bg">
       <div id="Clouds">
       <div class="Cloud Foreground"></div>
@@ -44,23 +144,8 @@
       </defs>
     </svg>
   </div>
-
 <div class=""container>
-    <label for="">
-        <select name="" id="">
-            <option disabled>Виберіть місто</option>
-            <option selected data-city="703448">Київ</option>
-            <option data-city="706483">Харків</option>
-            <option data-city="709930">Дніпро</option>
-            <option data-city="702550">Львів</option>
-            <option data-city="698740">Одеса</option>
-            <option data-city="690548">Ужгород</option>
-            <option data-city="707471">Івано-Франківськ</option>
-            <option data-city="709717">Донецьк</option>
-            <option data-city="702569">Луцьк</option>
-            <option data-city="689558">Вінниця</option>
-        </select>
-    </label>
+
     <div class="wether_penal_wrap">
       <div class="wether_penal">
           <p class="wether_penal_title"></p>
@@ -106,6 +191,13 @@
     <div id="root">
 
     </div>
+    <section class="forcast">
+        <nav class="forcast_header">
+            <h2 class="forcast_header_title"></h2>
+            <a href="http://" class="forcast_header_hours">Погодинно</a>
+            <a href="http://" class="forcast_header_hours">10 Днів</a>
+        </nav>
+    </section>
 </div>
 </body>
 </html>

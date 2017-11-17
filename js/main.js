@@ -42,22 +42,41 @@ $(document).ready(function () {
                              $('.wether_penal_temp').html(`${Math.round(data.main.temp - 273)}&#176`);
                              $('.wether_penal_desc').html(`${checkIcon}`);
                              $('.wether_penal_fell').html(`відчувається як ${Math.round(data.main.temp_min - 273)}&#176`);
-                             $('.wether_penal_fell').html(`МАКС ${Math.round(data.main.temp_max - 273)}&#176 МІН ${Math.round(data.main.temp_min - 273)}&#176`);
+                             $('.wether_penal_min').html(`МАКС ${Math.round(data.main.temp_max - 273)}&#176 МІН ${Math.round(data.main.temp_min - 273)}&#176`);
                              $('.wether_penal_icon').html(`<img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">`);
+                             
+                             //оформлення header
+                             $('.nav_icon_weather').attr("src", `https://openweathermap.org/img/w/${data.weather[0].icon}.png`);
+                             $('.location_text').html(`${Math.round(data.main.temp - 273)}&#176 ${data.name}, Україна`)
                         }
                     );
                 }
             }
-            $('#city').html(out);
-            $('#city p').on('click', function () {
-                
-            })
         }
         currentCity();
         
         $('select').on('change', function () {
             currentCity();
         })
+        function forcastByFiveDays(){
+            let out = '';
+            for (let key in data) {
+                if (data[key].id == $('select option:selected').attr('data-city')) {
+
+                    $.get(
+                        "http://api.openweathermap.org/data/2.5/forecast?",
+                        {
+                            "id": $('select option:selected').attr('data-city'),
+                            "appid": "47fb3882d09a3eb3c5a020c7c8f3e57a"
+                        },
+                        function (data) {
+                            console.log(data);
+                        }
+                    );
+                }
+            }
+        }
+        forcastByFiveDays();
     })
 
     function foo(data) {
@@ -65,10 +84,13 @@ $(document).ready(function () {
         let temp = Math.round(foo.main.temp - 273);
         let clouds = foo.clouds.all;
         let descFromServer = foo.weather[0].description;
-        console.log(clouds);
+        
         let description = '';
         if(descFromServer === 'mist'){
             description += "Туманно"
+        }
+        else if(descFromServer === 'light intensity shower rain'){
+            description += "Невеликий дощ"
         }
         if (temp > 15 && clouds > 40) {
             description += " Хмарно з проясненнями";
