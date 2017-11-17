@@ -8,7 +8,7 @@ $(document).ready(function () {
                     // console.log($('select option:selected').data());
                     // out += `<p data-city="${data[key].id}">${data[key].name}</p>`;
                     $.get( //Відправляємо GET запит на сервак з усією потрібною інформацією і отримуємо обєкт погоди
-                        "http://api.openweathermap.org/data/2.5/weather",
+                        "api.openweathermap.org/data/2.5/weather",
                         {
                             "id": $('select option:selected').attr('data-city'), //ідинтифікатор міста Лева
                             "appid": "47fb3882d09a3eb3c5a020c7c8f3e57a"
@@ -70,7 +70,7 @@ $(document).ready(function () {
                 if (data[key].id == $('select option:selected').attr('data-city')) {
 
                     $.get(
-                        "http://api.openweathermap.org/data/2.5/forecast?",
+                        "api.openweathermap.org/data/2.5/forecast?",
                         {
                             "id": $('select option:selected').attr('data-city'),
                             "appid": "47fb3882d09a3eb3c5a020c7c8f3e57a"
@@ -79,14 +79,14 @@ $(document).ready(function () {
                             //На сьогодні 18.00
                             $('.period_of_forcast.in_3_h').html(`Сьогодні <br>${data.list[1].dt_txt.slice(11, -3)}`);
                             $('.wether_forcast_desc.in_3_h').html(`${data.list[1].weather[0].description}`);
-                            $('.forcast_icon.in_3_h').html(`<img src="https://openweathermap.org/img/w/${data.list[1].weather[0].icon}.png">`);
+                            $('.forcast_icon.in_3_h').html(`<img src="openweathermap.org/img/w/${data.list[1].weather[0].icon}.png">`);
                             $('.forcast_temp.in_3_h').html(`${Math.round(data.list[1].main.temp - 273)}&#176`);
                             $('.forcast_humidity.in_3_h').html(`${data.list[1].main.humidity}%`);
 
                             //На завтра о 9,00
                             $('.period_of_forcast.tomorrow_day').html(`Завтра <br>${data.list[6].dt_txt.slice(11, -3)}`);
                             $('.wether_forcast_desc.tomorrow_day').html(`${data.list[6].weather[0].description}`);
-                            $('.forcast_icon.tomorrow_day').html(`<img src="https://openweathermap.org/img/w/${data.list[6].weather[0].icon}.png">`);
+                            $('.forcast_icon.tomorrow_day').html(`<img src="openweathermap.org/img/w/${data.list[6].weather[0].icon}.png">`);
                             $('.forcast_temp.tomorrow_day').html(`${Math.round(data.list[6].main.temp - 273)}&#176`);
                             $('.forcast_humidity.tomorrow_day').html(`${data.list[6].main.humidity}%`);
 
