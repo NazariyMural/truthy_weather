@@ -9,18 +9,25 @@ body{
 header {
     display: flex;
     flex-direction: column;
-    border: 1px solid yellowgreen;
+    flex-wrap: wrap;
     height: 100px;
+    @media all and (max-width: 700px) {
+        height: 100%;
+    }
 }
 .header_nav{
     display: flex;
     flex-direction: column;
+    
 }
 .social-f {
     display: inline-flex;
     width: 140px;
     justify-content: space-between;
     align-items: center; 
+    @media all and (max-width: 700px) {
+        display: none;
+    }
 }
 .social-f svg {
       height: 30px;
@@ -28,20 +35,27 @@ header {
       fill: #fff; 
       &:hover {
         opacity: 1;
-        fill: rgb(45, 45, 235);; 
+        fill: #2d2deb;
     }
+}
+#slct{
+    @media all and (max-width: 500px) {
+        min-width: 500px;
     }
+}
 
 .header_weather_location {
     background-color: #3c8ed2;
     display: flex;
     justify-content: space-around;
-
+    @media all and (max-width: 500px) {
+        flex-direction: column;
+    }
 }
 .current_loc{
     text-decoration: none;
     display: flex;
-    color: #fff;
+    color: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .location_text{
@@ -62,6 +76,7 @@ header {
         padding: 0;
         transition: all 350ms;
         position: relative;
+        
 
         .period_item {
             position: relative;
@@ -89,7 +104,24 @@ header {
             &:hover::after{
                 transform: scaleX(1);
             }
+            
         }
+        .period_item:nth-last-child(1){
+            @media all and (max-width: 700px) {
+                display: none;
+            }
+        }
+        .period_item:nth-last-child(2){
+            @media all and (max-width: 500px) {
+                display: none;
+            }
+        }
+        .period_item:nth-last-child(3){
+            @media all and (max-width: 400px) {
+                display: none;
+            }
+        }
+        
     }
 }
 .wether_penal_wrap{
@@ -99,6 +131,9 @@ header {
     height: 335px;
     z-index: 4000;
     margin: 20px;
+    @media all and (max-width: 700px) {
+        width: 90%;
+    }
 }
 
 .wether_penal{
@@ -110,6 +145,7 @@ header {
     position: relative;
     padding: 0 20px;
     background-size: cover;
+    
     
 }
 .wether_penal_title{
@@ -174,28 +210,54 @@ header {
 
 .wather_list .wather_item:last-child{
     border-bottom: none;
+    @media all and (max-width: 590px) {
+        display: none;
+        border-bottom: none;
+    }
 }
 
 $forcast_col: #1f4371;
 section.forcast {
     display: flex;
     width: 65%;
-    height: 430px;
+    height: 330px;
     flex-direction: column;
-    padding: 25px 20px;
+    padding: 15px 20px;
     margin: 20px;
     background-color: #ffffff;
     transition: all 300ms ease-in;
+    @media all and (max-width: 590px) {
+        width: 95%;
+        box-sizing: border-box;
+        margin: 20px 5px;
+    }
         .forcast_header{
-            // height: 40px;
             display: flex;
             justify-content: space-between;
             width: 100%;
+            height: 40px;
             h2{
+                margin: 0;
                 color: rgb(57, 57, 57);
             }
             .forcast_header_link{
-                padding-top: 25px;
+                position: relative;
+                padding-top: 7px;
+                a{
+                    text-decoration: none;
+                    color: #474747;
+                    padding-left: 5px;
+                }
+            }
+            .forcast_header_link::before{
+                content: '|';
+                position: absolute;
+                top: 6px;
+                left: 87px;
+                display: inline-block;
+                width: 4px;
+                height: 15px;
+                color: #000;
             }
         }
         .forcast_content{
@@ -217,6 +279,9 @@ section.forcast {
             }
             .forcast_current{
                 background-color:$forcast_col;
+                @media all and (max-width: 500px) {
+                    display: none;
+                }
             }
             .forcast_tomorrow_day{
                 background-color:lighten($forcast_col, 10%);

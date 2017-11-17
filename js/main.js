@@ -20,6 +20,7 @@ $(document).ready(function () {
                             checkViewImage(data);
                             checkViewBack(data);
                             checkMoon(data);
+
                             // let out = '';
                             // console.log(data);
                             // out += `<div class="wether-wrap">`
@@ -157,16 +158,18 @@ $(document).ready(function () {
 
     function checkViewBack(data) {
         let foo = data;
-        let clouds = foo.clouds.all;
+        let cloudsServ = foo.clouds.all;
         let hours = new Date().getHours();
         let descFromServer = foo.weather[0].description;
-        
-        
+
+        let cloud_reg1 = $('.cloud_reg1');
+        let cloud_reg = $('.cloud_reg');
         
         let rainCloud = "url('../img/rain.svg')";
         let rainStrong = "url('../img/rain_strong_black.svg')";
        
         let sunny = "url('../img/sun.svg')";
+
         let cloud = "url('../img/just_cloud.svg')";
         let bigCloud = "url('../img/big_cloud.svg')"; 
 
@@ -175,84 +178,100 @@ $(document).ready(function () {
 
         let back_moon = $('.Cloud Foreground.moon');
         let back_moonCloud = $('#moon-cloud-black');
-        let back_CloudAll = $('.Cloud');
         
-        
+
         if(descFromServer.indexOf('rain')!==-1){
-            back_CloudAll.css("background-image", rainCloud);
-            back_moonCloud.css("background-image", rainStrong);
-            console.log("1");
+            cloud_reg1.css("background-image", rainCloud);
+            console.log("rain");
         }
 
         else if(descFromServer.indexOf('snow')!==-1){
-            back_CloudAll.css({
+            cloud_reg1.css({
                 "background-image": snow
             });
-            back_moonCloud.css({
+            cloud_reg.css({
                 "background-image": snowBig
             })
-            console.log("2");
+            console.log("snow");
         }
 
         else if(descFromServer.indexOf('light')!==-1 || descFromServer.indexOf('sun')!==-1){
-            back_CloudAll.css({
-                "background-image": sunny
+            cloud_reg1.css({
+                "background-image": 'none'
             });
-            back_moonCloud.css({
-                "background-image": "none"
+            cloud_reg.css({
+                "background-image": sunny
             })
-            console.log("3");
+            console.log("sunny");
         }
         
-        else if(clouds > 40){
-            back_moonCloud.css({
+        else if(cloudsServ > 70){
+            cloud_reg1.css({
                 "background-image": cloud
             });
-            back_CloudAll.css({
+            cloud_reg.css({
                 "background-image": bigCloud
             });
-            console.log("4");
+            console.log("cloudy");
         }
-
         else{
-            back_CloudAll.css({
+            cloud_reg1.css({
                 "background-image": cloud
-            })
-            console.log("5");
+            });
+            cloud_reg.css({
+                "background-image": bigCloud
+            });
+            console.log("nothing");
         }
     }
     function checkViewImage(data){
         let hours = new Date().getHours();
         let pan_bg = $('.wether_penal');
 
+
         let nigth_clear = "url('../img/bg/night-clear.jpg')";
+        let morning = "url('../img/bg/morning.jpg')";
+        let day = "url('../img/bg/day.jpg')";
         let evening_cloud_middle = "url('../img/variable_icon/clouds_day.jpg')";
 
-        if(hours <= 20){
-            pan_bg.css("background-image", evening_cloud_middle);
-            console.log("checkViewImage_1");
+        if(hours > 6 && hours < 12){
+            pan_bg.css("background-image", morning);
+            console.log("morning");
         }
-        else if(hours > 20 && clouds < 60){
+        else if(hours => 22){
             pan_bg.css("background-image", nigth_clear);
-            console.log("checkViewImage_2");
+            console.log("nigth_clear");
+        }
+        else {
+            pan_bg.css("background-image", day);
+            console.log("day");
         }
     }
     function checkMoon(data){
-        let bigCloud = "url('../img/big_cloud.svg')"; 
         let hours = new Date().getHours();
-        let back_moon = $('.Cloud Foreground.moon');
-        let back_moonCloud = $('.Cloud.Background.moon-cloud-black');
-        let back_CloudAll = $('.Cloud');
 
-        if(hours > 22 && clouds < 60 ||  hours < 5){
-            back_moon.css("display", "block");
-            back_moonCloud.css({
-                "background-image": "url('../img/moon-cloud-black.svg')"
+        let cloud_reg = "url('../img/big_cloud.svg')"; 
+        let cloud_reg1 = "url('../img/just_cloud.svg')"
+
+        let cloud = "url('../img/just_cloud.svg')";
+        let bigCloud = "url('../img/big_cloud.svg')"; 
+
+        let back_moon = $('#moonBig');
+        let moon_cloud_black = $('#moon_cloud_black');
+        let half_moon = $('#half_moon');
+
+        if(hours => 22){
+            back_moon.css({
+                "display": "block"
             });
-            back_CloudAll.css({
-                "background-image": "url('../img/if_moon_half.svg')" 
+            half_moon.css({
+                "display": "block"
+            });
+            moon_cloud_black.css({
+                "display": "block"
             });
             console.log('checkMoon_1');
+            checkViewBack(data);
         }
         else{
             checkViewBack(data);

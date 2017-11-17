@@ -70830,6 +70830,49 @@
     ],
     "zoom": 11
   },
+
+  {
+    "id": 756135,
+    "coord": {
+      "lon": 21.01178,
+      "lat": 52.229771
+    },
+    "country": "PL",
+    "geoname": {
+      "cl": "P",
+      "code": "PPLC",
+      "parent": 858787
+    },
+    "name": "Warsaw",
+    "stat": {
+      "level": 1.0,
+      "population": 1000000
+    },
+    "stations": [
+      {
+        "id": 5374,
+        "dist": 7,
+        "kf": 1
+      },
+      {
+        "id": 8759,
+        "dist": 27,
+        "kf": 1
+      },
+      {
+        "id": 9403,
+        "dist": 10,
+        "kf": 1
+      },
+      {
+        "id": 28214,
+        "dist": 20,
+        "kf": 1
+      }
+    ],
+    "zoom": 4
+  },
+
   {
     "id": 7303786,
     "coord": {

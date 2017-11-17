@@ -52,3 +52,10 @@ select::-ms-expand {
   -webkit-transition: .25s all ease;
   transition: .25s all ease;
 }
+@media all and (max-width: 500px) {
+  .select{
+    width: 93%;
+    margin: 0 auto;
+  }
+  
+}
