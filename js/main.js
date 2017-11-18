@@ -175,9 +175,6 @@ $(document).ready(function () {
 
         let snow = "url('../img/snow_cloud.svg')";
         let snowBig = "url('../img/snowyyy.svg')";
-
-        let back_moon = $('.Cloud Foreground.moon');
-        let back_moonCloud = $('#moon-cloud-black');
         
 
         if(descFromServer.indexOf('rain')!==-1){
@@ -257,8 +254,8 @@ $(document).ready(function () {
         let cloud_reg = "url('../img/big_cloud.svg')"; 
         let cloud_reg1 = "url('../img/just_cloud.svg')"
 
-        let cloud = "url('../img/just_cloud.svg')";
-        let bigCloud = "url('../img/big_cloud.svg')"; 
+        let cloud = "url('./img/just_cloud.svg')";
+        let bigCloud = "url('./img/big_cloud.svg')"; 
 
         let back_moon = $('#moonBig');
         let moon_cloud_black = $('#moon_cloud_black');
