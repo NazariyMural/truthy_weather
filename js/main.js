@@ -227,7 +227,7 @@ $(document).ready(function () {
     function checkViewImage(data){
         let hours = new Date().getHours();
         let pan_bg = $('.wether_penal');
-
+        let cloudsServ = data.clouds.all;
 
         let nigth_clear = "url('../img/bg/night-clear.jpg')";
         let morning = "url('../img/bg/morning.jpg')";
@@ -238,13 +238,17 @@ $(document).ready(function () {
             pan_bg.css("background-image", morning);
             console.log("morning");
         }
-        else if(hours => 22){
+
+        else if(hours >= 22){
             pan_bg.css("background-image", nigth_clear);
             console.log("nigth_clear");
         }
-        else {
+        else if(cloudsServ > 50){
+            pan_bg.css("background-image", evening_cloud_middle);
+            console.log("cloudy");
+        }
+        else{
             pan_bg.css("background-image", day);
-            console.log("day");
         }
     }
     function checkMoon(data){
@@ -259,8 +263,7 @@ $(document).ready(function () {
         let back_moon = $('#moonBig');
         let moon_cloud_black = $('#moon_cloud_black');
         let half_moon = $('#half_moon');
-
-        if(hours => 22){
+        if(hours >= 22){
             back_moon.css({
                 "display": "block"
             });
@@ -278,6 +281,4 @@ $(document).ready(function () {
             console.log('checkMoon_2');
         }
     }
-
-
 });
