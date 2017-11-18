@@ -165,16 +165,16 @@ $(document).ready(function () {
         let cloud_reg1 = $('.cloud_reg1');
         let cloud_reg = $('.cloud_reg');
         
-        let rainCloud = "url('../img/rain.svg')";
-        let rainStrong = "url('../img/rain_strong_black.svg')";
+        let rainCloud = "url('./img/rain.svg')";
+        let rainStrong = "url('./img/rain_strong_black.svg')";
        
-        let sunny = "url('../img/sun.svg')";
+        let sunny = "url('./img/sun.svg')";
 
-        let cloud = "url('../img/just_cloud.svg')";
-        let bigCloud = "url('../img/big_cloud.svg')"; 
+        let cloud = "url('./img/just_cloud.svg')";
+        let bigCloud = "url('./img/big_cloud.svg')"; 
 
-        let snow = "url('../img/snow_cloud.svg')";
-        let snowBig = "url('../img/snowyyy.svg')";
+        let snow = "url('./img/snow_cloud.svg')";
+        let snowBig = "url('./img/snowyyy.svg')";
         
 
         if(descFromServer.indexOf('rain')!==-1){
@@ -226,10 +226,10 @@ $(document).ready(function () {
         let pan_bg = $('.wether_penal');
         let cloudsServ = data.clouds.all;
 
-        let nigth_clear = "url('../img/bg/night-clear.jpg')";
-        let morning = "url('../img/bg/morning.jpg')";
-        let day = "url('../img/bg/day.jpg')";
-        let evening_cloud_middle = "url('../img/variable_icon/clouds_day.jpg')";
+        let nigth_clear = "url('./img/bg/night-clear.jpg')";
+        let morning = "url('./img/bg/morning.jpg')";
+        let day = "url('./img/bg/day.jpg')";
+        let evening_cloud_middle = "url('./img/variable_icon/clouds_day.jpg')";
 
         if(hours > 6 && hours < 12){
             pan_bg.css("background-image", morning);

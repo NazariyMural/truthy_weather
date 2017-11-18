@@ -210,8 +210,12 @@ header {
 
 .wather_list .wather_item:last-child{
     border-bottom: none;
-    @media all and (max-width: 590px) {
+    @media all and (max-width: 790px) {
         display: none;
+    }
+}
+.wather_list .wather_item:nth-last-child(2){
+    @media all and (max-width: 790px) {
         border-bottom: none;
     }
 }
@@ -258,6 +262,19 @@ section.forcast {
                 width: 4px;
                 height: 15px;
                 color: #000;
+            }
+            @media all and (max-width: 590px) {
+                h2{
+                    font-size: 18px;
+                }
+            }
+            @media all and (max-width: 390px) {
+                h2{
+                    font-size: 16px;
+                }
+                .forcast_header_link{
+                    display: none;
+                }
             }
         }
         .forcast_content{
