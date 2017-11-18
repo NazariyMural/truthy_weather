@@ -199,7 +199,17 @@ section.forcast {
     section.forcast {
       width: 95%;
       box-sizing: border-box;
-      margin: 20px 5px; } }
+      margin: 20px 5px;
+      height: 100%; }
+      section.forcast .forcast_header h2 {
+        font-size: 18px; }
+      section.forcast .forcast_content {
+        flex-wrap: wrap; } }
+  @media all and (max-width: 390px) {
+    section.forcast h2 {
+      font-size: 16px; }
+    section.forcast .forcast_header_link {
+      display: none; } }
   section.forcast .forcast_header {
     display: flex;
     justify-content: space-between;
@@ -224,14 +234,6 @@ section.forcast {
       width: 4px;
       height: 15px;
       color: #000; }
-    @media all and (max-width: 590px) {
-      section.forcast .forcast_header h2 {
-        font-size: 18px; } }
-    @media all and (max-width: 390px) {
-      section.forcast .forcast_header h2 {
-        font-size: 16px; }
-      section.forcast .forcast_header .forcast_header_link {
-        display: none; } }
   section.forcast .forcast_content {
     display: flex;
     height: 100%; }
@@ -249,14 +251,11 @@ section.forcast {
       font-weight: 500; }
     section.forcast .forcast_content .forcast_current {
       background-color: #1f4371; }
-      @media all and (max-width: 500px) {
-        section.forcast .forcast_content .forcast_current {
-          display: none; } }
     section.forcast .forcast_content .forcast_tomorrow_day {
       background-color: #2a5b99; }
     section.forcast .forcast_content .forcast_tomorrow_evening {
       background-color: #2f67ad; }
-      @media all and (max-width: 850px) {
+      @media all and (min-width: 400px) and (max-width: 850px) {
         section.forcast .forcast_content .forcast_tomorrow_evening {
           display: none; } }
     section.forcast .forcast_content .forcast_day_after_tomorrow_day {

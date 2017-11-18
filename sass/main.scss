@@ -234,6 +234,23 @@ section.forcast {
         width: 95%;
         box-sizing: border-box;
         margin: 20px 5px;
+        height: 100%;
+        .forcast_header{
+            h2{
+                font-size: 18px;
+            }
+        }
+        .forcast_content{
+            flex-wrap: wrap;
+        }
+    }
+    @media all and (max-width: 390px) {
+        h2{
+            font-size: 16px;
+        }
+        .forcast_header_link{
+            display: none;
+        }
     }
         .forcast_header{
             display: flex;
@@ -263,19 +280,7 @@ section.forcast {
                 height: 15px;
                 color: #000;
             }
-            @media all and (max-width: 590px) {
-                h2{
-                    font-size: 18px;
-                }
-            }
-            @media all and (max-width: 390px) {
-                h2{
-                    font-size: 16px;
-                }
-                .forcast_header_link{
-                    display: none;
-                }
-            }
+            
         }
         .forcast_content{
             display: flex;
@@ -296,17 +301,13 @@ section.forcast {
             }
             .forcast_current{
                 background-color:$forcast_col;
-                @media all and (max-width: 500px) {
-                    display: none;
-                }
             }
             .forcast_tomorrow_day{
                 background-color:lighten($forcast_col, 10%);
             }
             .forcast_tomorrow_evening{
                 background-color:lighten($forcast_col, 15%);
-
-                @media all and (max-width: 850px) {
+                @media all and(min-width: 400px) and (max-width: 850px) {
                     display: none;
                 }
             }
