@@ -8,7 +8,7 @@ $(document).ready(function () {
                     // console.log($('select option:selected').data());
                     // out += `<p data-city="${data[key].id}">${data[key].name}</p>`;
                     $.get( //Відправляємо GET запит на сервак з усією потрібною інформацією і отримуємо обєкт погоди
-                        "http://api.openweathermap.org/data/2.5/weather",
+                        "https://api.openweathermap.org/data/2.5/weather",
                         {
                             "id": $('select option:selected').attr('data-city'), //ідинтифікатор міста Лева
                             "appid": "47fb3882d09a3eb3c5a020c7c8f3e57a"
@@ -70,7 +70,7 @@ $(document).ready(function () {
                 if (data[key].id == $('select option:selected').attr('data-city')) {
 
                     $.get(
-                        "http://api.openweathermap.org/data/2.5/forecast?",
+                        "https://api.openweathermap.org/data/2.5/forecast?",
                         {
                             "id": $('select option:selected').attr('data-city'),
                             "appid": "47fb3882d09a3eb3c5a020c7c8f3e57a"
