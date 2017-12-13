@@ -14,7 +14,6 @@ $(document).ready(function () {
                             "appid": "47fb3882d09a3eb3c5a020c7c8f3e57a"
                         },
                         function (data) {
-                            //старе форматування
                             let checkIcon = foo(data);
                             let outTime = checkDate();
                             checkViewImage(data);
