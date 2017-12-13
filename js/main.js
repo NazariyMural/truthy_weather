@@ -1,4 +1,4 @@
-//Будемо надчилати GET запит. 
+
 $(document).ready(function () {
     $.getJSON('./data/current.city.list.json', function (data) {
         function currentCity(){
@@ -7,10 +7,10 @@ $(document).ready(function () {
                 if (data[key].id == $('select option:selected').attr('data-city')) {
                     // console.log($('select option:selected').data());
                     // out += `<p data-city="${data[key].id}">${data[key].name}</p>`;
-                    $.get( //Відправляємо GET запит на сервак з усією потрібною інформацією і отримуємо обєкт погоди
+                    $.get( 
                         "https://api.openweathermap.org/data/2.5/weather",
                         {
-                            "id": $('select option:selected').attr('data-city'), //ідинтифікатор міста Лева
+                            "id": $('select option:selected').attr('data-city'),
                             "appid": "47fb3882d09a3eb3c5a020c7c8f3e57a"
                         },
                         function (data) {
@@ -35,7 +35,7 @@ $(document).ready(function () {
                             // out += `</div>`
                             // $('#root').html(out);
 
-                            //Нове форматування списку який справа
+
                             $('.wather_item_wind').html(`${data.wind.speed} м/с`);
                             $('.wather_item_humidity').html(`${data.main.humidity}%`);
                             $('.wather_item_visibility').html(`${data.visibility/1000} км`);
@@ -50,7 +50,7 @@ $(document).ready(function () {
                              $('.wether_penal_min').html(`МАКС ${Math.round(data.main.temp_max - 273)}&#176 МІН ${Math.round(data.main.temp_min - 273)}&#176`);
                              $('.wether_penal_icon').html(`<img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">`);
                              
-                             //оформлення header
+
                              $('.nav_icon_weather').attr("src", `https://openweathermap.org/img/w/${data.weather[0].icon}.png`);
                              $('.location_text').html(`${Math.round(data.main.temp - 273)}&#176 ${data.name}, Україна`);
                         }
